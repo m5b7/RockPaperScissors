@@ -2,11 +2,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class InitializationTest {
+public class BehaviourTest {
 
     @Test
-    public void initialize() {
-
-
+    public void behaviourSetUp() {
     }
 }

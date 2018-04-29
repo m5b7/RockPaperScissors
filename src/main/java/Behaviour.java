@@ -2,7 +2,13 @@ import java.util.HashMap;
 
 public class Behaviour {
 
-    private HashMap<Choice, Float> probabilityDistribution;
+    private HashMap<Choice, Float> probabilityDistribution = new HashMap<Choice, Float>();
+
+    public void behaviourSetUp() {
+        for (Choice choice : Main.CHOICES) {
+            probabilityDistribution.put(choice, (float) 0.0);
+        }
+    }
 
     public Behaviour(Choice[] choices, float[] probabilities) throws IllegalArgumentException{
         if (false) {

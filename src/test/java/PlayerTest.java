@@ -19,6 +19,6 @@ public class PlayerTest {
     public void chooseTest_GivenBehaviourPaper_ChooseReturnsPaper() {
         String playersName = "Player A";
         Player Player_A = new Player(playersName);
-        assertEquals("Paper", Player_A.choose().toString());
+        assertEquals(null, Player_A.choose());
     }
 }

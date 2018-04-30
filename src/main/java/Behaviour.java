@@ -24,5 +24,9 @@ public class Behaviour {
                 probabilityDistributionOfChoices.put(choices[i], probabilities[i]);
             }
         }
-        }
     }
+
+    public HashMap<Choice, Double> getProbabilityDistributionOfChoices() {
+        return this.probabilityDistributionOfChoices;
+    }
+}

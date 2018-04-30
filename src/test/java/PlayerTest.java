@@ -4,21 +4,25 @@ import static org.junit.Assert.assertEquals;
 
 public class PlayerTest {
 
+    private Player Player_A;
+    private String NameOfPlayer_A;
+
     @Before
     public void setUp() {
+        NameOfPlayer_A = "Player A";
+        Player_A = new Player(NameOfPlayer_A);
     }
 
     @Test
     public void getNameTest() {
-        String playersName = "Player A";
-        Player Player_A = new Player(playersName);
-        assertEquals(playersName, Player_A.getName());
+        assertEquals(NameOfPlayer_A, Player_A.getName());
     }
 
     @Test
     public void chooseTest_GivenBehaviourPaper_ChooseReturnsPaper() {
-        String playersName = "Player A";
-        Player Player_A = new Player(playersName);
+
         assertEquals(null, Player_A.choose());
     }
+
+
 }

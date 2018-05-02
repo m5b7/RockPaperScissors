@@ -13,20 +13,20 @@ public class BehaviourTest {
 
 
         // arrange
-        Choice[] choices = {Choice.Rock, Choice.Paper, Choice.Scissors};
-        double[] probabilities = {0, 1, 0};
+        final Choice[] CHOICES = {Choice.Rock, Choice.Paper, Choice.Scissors};
+        final double[] PROBABILITIES = {0, 1, 0};
 
 
         // act
-        Behaviour constantlyPaper = new Behaviour(choices, probabilities);
+        Behaviour constantlyPaper = new Behaviour(CHOICES, PROBABILITIES);
 
 
         // assert
 
         // delta necessary, to avoid depreation of assertEquals(double, double)
-        for (int i = 0; i < choices.length; i++ ) {
-            assertEquals(probabilities[i],
-                    (double) constantlyPaper.getProbabilityDistributionOfChoices().get(choices[i]), 0.0);
+        for (int i = 0; i < CHOICES.length; i++ ) {
+            assertEquals(PROBABILITIES[i],
+                    (double) constantlyPaper.getProbabilityDistributionOfChoices().get(CHOICES[i]), 0.0);
         }
     }
 }

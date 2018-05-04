@@ -1,12 +1,10 @@
-import java.util.HashMap;
+
 import java.util.Random;
 
 public class Player {
 
     private String name;
     private Behaviour behaviour;
-
-
 
     public Player(String name, Behaviour behaviour) {
         this.name = name;

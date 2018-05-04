@@ -7,19 +7,36 @@ import static org.junit.Assert.*;
 
 public class RoundTest {
 
-    final private Player playerA = new Player("Player A");
-    final private Player playerB = new Player("Player B");
-    final private Player playerC = new Player("Player C");
-
     @Test
-    public void startRoundTest_WhenCalled_PlayersChoicesContainTheCorrectInformation() {
+    public void startRoundTest_GivenRockVsPaper_WhenCalled_ThenPaperWins() {
 
         // arrange
         List<Player> players = new ArrayList<Player>();
+        players.add(Constants.PLAYER_ALWAYS_ROCK);
+        players.add(Constants.PLAYER_ALWAYS_PAPER);
 
-        // assert   randomness can't be tested properly
-        for (Player player : players) {
+        Round testRound = new Round(players, Constants.tieDummy, 1);
 
+        // act
+        Player actualWinner = testRound.startRoundAndReturnWinner();
+
+        // assert
+        assertEquals(Constants.PLAYER_ALWAYS_PAPER,actualWinner);
         }
+
+    @Test
+    public void startRoundTest_GivenScissorsVsScissors_WhenCalled_ThenTieDummyWins() {
+
+        // arrange
+        List<Player> players = new ArrayList<Player>();
+        players.add(Constants.PLAYER_ALWAYS_SCISSORS);
+        players.add(Constants.PLAYER_ALWAYS_SCISSORS);
+        Round testRound = new Round(players, Constants.tieDummy, 1);
+
+        // act
+        Player actualWinner = testRound.startRoundAndReturnWinner();
+
+        // assert
+        assertEquals(Constants.tieDummy,actualWinner);
     }
 }

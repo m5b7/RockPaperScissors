@@ -13,7 +13,7 @@ public class Round {
         this.tieDummy = tieDummy;
     }
 
-    public Player startRound() {
+    public Player startRoundAndReturnWinner() {
 
         for (Player player : players) {
             playersChoices.put(player, player.choose());

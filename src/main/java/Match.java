@@ -5,7 +5,7 @@ public class Match {
 
     private List<Player> players = new ArrayList<Player>();
     private int numberOfRounds;
-    final private Player tieDummy = new Player("TieDummy");
+    final private Player tieDummy = new Player("Tie");
     private HashMap<Player,Integer> winningStatistic = new HashMap<Player, Integer>();
     // add players and tieDummy
 
@@ -24,15 +24,24 @@ public class Match {
     public void startMatch() {
         winningStatistic.put(tieDummy,0);
 
-        // Test meckert hier. Per Stream die Liste players ausgeben
         for (Player player : players) {
             winningStatistic.put(player, 0);
         }
-/*
+
         for (int roundNumber = 1; roundNumber <= numberOfRounds; roundNumber++) {
             Round round = new Round(players, tieDummy, roundNumber);
+            Player winner = round.startRoundAndReturnWinner();
+            winningStatistic.put(winner, winningStatistic.get(winner)+1);
         }
-*/    }
+    }
+
+    public void printWinningStatistic() {
+        System.out.println("\nResult \n Games won:\n");
+        for (Player player : winningStatistic.keySet()) {
+            System.out.println(player.getName() + ": " + winningStatistic.get(player));
+        }
+
+    }
 
     public HashMap<Player,Integer> getWinningStatistic() {
         return winningStatistic;

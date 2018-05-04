@@ -36,10 +36,12 @@ public class Match {
     }
 
     public void printWinningStatistic() {
-        System.out.println("\nResult \n Games won:\n");
-        for (Player player : winningStatistic.keySet()) {
-            System.out.println(player.getName() + ": " + winningStatistic.get(player));
+        System.out.println("\nResult \n ");
+        for (Player player : players) {
+            System.out.printf("%s wins %d of %d games. %n", player.getName(), winningStatistic.get(player), numberOfRounds);
         }
+        System.out.printf("Tie: %d of %d games.%n", winningStatistic.get(tieDummy), numberOfRounds);
+
 
     }
 
